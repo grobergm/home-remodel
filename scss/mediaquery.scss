@@ -1,0 +1,11 @@
+@media screen and (min-width:450px){
+  #service-list{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width:800px){
+  #service-list{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

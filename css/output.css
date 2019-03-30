@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Cantarell|Spectral");
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +14,47 @@ li {
 }
 
 a {
-  color: black;
+  color: white;
   text-decoration: none;
+}
+
+body {
+  font-family: courier;
+  font-family: "Spectral", serif;
+  font-size: 16px;
+  color: white;
+}
+
+h1, h2 {
+  font-family: "Cantarell", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+.float-in {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+body {
+  background-color: deepskyblue;
+}
+
+.content {
+  position: relative;
+  top: 50px;
 }
 
 #banner {
@@ -22,27 +62,160 @@ a {
   background-position: center center;
   background-size: cover;
   height: 50vh;
+  position: relative;
 }
-
-nav {
-  padding: 20px 0;
-  position: fixed;
+#banner .screen {
+  z-index: 2;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  background-color: white;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay {
+  position: absolute;
+  z-index: 5;
+  top: 30%;
+  right: 10%;
+  padding-bottom: 3rem;
+}
+
+nav {
+  position: fixed;
+  height: 50px;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  overflow: hidden;
 }
 nav ul {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-#services {
+#logo {
+  margin-left: 1vw;
+}
+
+.middle-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1vw;
+}
+.middle-nav li {
+  margin-left: 2vw;
+}
+
+.section {
+  position: relative;
+  top: -20vh;
+}
+
+#service-list {
   display: grid;
+  grid-template-columns: 100vw;
   justify-items: center;
+  grid-gap: 1.5vw;
+}
+#service-list div {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+#service-list div .screen {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+#service-list div:hover .screen {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#service-list div:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+#service-list div:hover h2 {
+  display: inline-block;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+#service-list div h2 {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+#service-list div img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.info {
+  padding: 10vw;
+}
+
+.header {
+  padding: 2vw 10vw;
+}
+
+.button {
+  font-size: 1.5rem;
+  display: block;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.nav-project {
+  padding: 1rem;
+}
+
+.project {
+  background-color: #ff4000;
+}
+.project:hover {
+  background-color: #992600;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+@media screen and (min-width: 450px) {
+  #service-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 800px) {
+  #service-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */
