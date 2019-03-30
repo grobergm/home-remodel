@@ -1,0 +1,29 @@
+@import 'reset';
+
+#banner{
+  background-image:url('../img/remodel.jpg');
+  background-position:center center;
+  background-size:cover;
+  height:50vh;
+}
+
+nav{
+  padding: 20px 0;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  background-color:white;
+  ul{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+#services{
+  display:grid;
+  justify-items: center;
+}
